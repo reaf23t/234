@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nicanva - Design Criativo</title>
+    <style>
+        /* Paleta de cores inspirada no Canva */
+        :root {
+            --canva-blue: #00C4CC;
+            --canva-purple: #7B61FF;
+            --canva-pink: #FF5EAA;
+            --canva-yellow: #FFC800;
+            --canva-green: #00D084;
+            --canva-dark: #2A2A2A;
+            --canva-light: #F5F5F5;
+            --canva-white: #FFFFFF;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--canva-light);
+            color: var(--canva-dark);
+            line-height: 1.6;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--canva-blue), var(--canva-purple));
+            color: var(--canva-white);
+            padding: 2rem 0;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .logo {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        
+        .tagline {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        nav {
+            background-color: var(--canva-white);
+            padding: 1rem 0;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        nav li {
+            margin: 0 1.5rem;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: var(--canva-dark);
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        
+        nav a:hover {
+            color: var(--canva-purple);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+        }
+        
+        .hero {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+            color: var(--canva-dark);
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            color: var(--canva-dark);
+        }
+        
+        .about-section {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+            margin-bottom: 4rem;
+            background-color: var(--canva-white);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .profile-pic {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--canva-purple);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .portfolio {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .portfolio-item {
+            background-color: var(--canva-white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .portfolio-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+        }
+        
+        .portfolio-img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        
+        .portfolio-info {
+            padding: 1.5rem;
+        }
+        
+        .portfolio-info h3 {
+            margin-top: 0;
+            color: var(--canva-purple);
+        }
+        
+        .quote-section {
+            background-color: var(--canva-purple);
+            color: var(--canva-white);
+            padding: 3rem;
+            text-align: center;
+            margin: 3rem 0;
+            border-radius: 8px;
+        }
+        
+        .quote {
+            font-size: 1.8rem;
+            font-style: italic;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        
+        .skill-tag {
+            background-color: var(--canva-blue);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+        
+        footer {
+            background-color: var(--canva-dark);
+            color: var(--canva-white);
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            margin: 1rem 0;
+        }
+        
+        .social-links a {
+            color: var(--canva-white);
+            margin: 0 1rem;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+        
+        .social-links a:hover {
+            color: var(--canva-blue);
+        }
+        
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav li {
+                margin: 0.5rem 0;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .quote {
+                font-size: 1.4rem;
+            }
+            
+            .about-section {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .profile-pic {
+                width: 200px;
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">NICANVA</div>
+        <div class="tagline">Design que inspira e transforma</div>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#home">Início</a></li>
+            <li><a href="#about">Sobre Mim</a></li>
+            <li><a href="#portfolio">Portfólio</a></li>
+            <li><a href="#contact">Contato</a></li>
+        </ul>
+    </nav>
+    
+    <div class="container">
+        <section id="home" class="hero">
+            <h1>Criatividade que faz a diferença</h1>
+            <p>Design gráfico, identidade visual e soluções criativas para destacar sua marca no mercado.</p>
+        </section>
+        
+        <section id="about">
+            <h2>Sobre Mim</h2>
+            <div class="about-section">
+                <!-- Substitua "sua-foto.jpg" pelo nome do arquivo da sua foto -->
+                <img src="sua-foto.jpg" alt="Foto de Nicanva" class="profile-pic">
+                <div class="about-text">
+                    <h3>Olá, eu sou Nicanva!</h3>
+                    <p>Sou designer gráfico especializado em criação de conteúdo visual impactante. Minha paixão é transformar ideias em designs que comunicam e inspiram.</p>
+                    <p>Com experiência em ferramentas como Canva, Adobe Photoshop e Illustrator, crio soluções visuais que atendem às necessidades específicas de cada cliente, desde posts para redes sociais até identidades visuais completas.</p>
+                    
+                    <div class="skills">
+                        <span class="skill-tag">Design Gráfico</span>
+                        <span class="skill-tag">Identidade Visual</span>
+                        <span class="skill-tag">Canva</span>
+                        <span class="skill-tag">Photoshop</span>
+                        <span class="skill-tag">Ilustração</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="portfolio">
+            <h2>Portfólio</h2>
+            <div class="portfolio">
+                <div class="portfolio-item">
+                    <img src="1.png" alt="Design para Copa de Judô" class="portfolio-img">
+                    <div class="portfolio-info">
+                        <h3>Copa Judô Monte Branco</h3>
+                        <p>Design de banner para evento esportivo, combinando dinamismo e tradição.</p>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item">
+                    <img src="2.png" alt="Design Inspiracional" class="portfolio-img">
+                    <div class="portfolio-info">
+                        <h3>Arte Inspiracional</h3>
+                        <p>Post motivacional com tipografia impactante e mensagem positiva.</p>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item">
+                    <!-- Adicione mais um dos seus trabalhos aqui -->
+                    <img src="outro-trabalho.jpg" alt="Outro trabalho de design" class="portfolio-img">
+                    <div class="portfolio-info">
+                        <h3>Identidade Visual</h3>
+                        <p>Criação de logo e elementos gráficos para marca pessoal.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="quote-section">
+            <div class="quote">
+                "Com Deus, todo obstáculo é apenas um passo para a vitória."
+            </div>
+        </section>
+    </div>
+    
+    <footer id="contact">
+        <h2>Vamos trabalhar juntos?</h2>
+        <p>Entre em contato para discutir seu próximo projeto.</p>
+        
+        <div class="social-links">
+            <a href="#" aria-label="Instagram">📸</a>
+            <a href="#" aria-label="Behance">🖌️</a>
+            <a href="#" aria-label="LinkedIn">💼</a>
+            <a href="#" aria-label="E-mail">✉️</a>
+        </div>
+        
+        <p>&copy; 2023 Nicanva Design. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>
